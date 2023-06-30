@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨Welcome✨</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(65, 144, 235);
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #add0fd;
+      border-radius: 5px;
+      background-color: #add0fd;
+    }
+    
+    input[type="text"] {
+      width: 94%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #47ffa9;
+      border-radius: 3px;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Please Enter Your Chosen Name Or Nickname</h2>
+    <form id="nameForm">
+      <input type="text" id="nameInput" placeholder="Enter your name" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code
+    const form = document.getElementById('nameForm');
+    const nameInput = document.getElementById('nameInput');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+     var name = nameInput.value;
+	 	localStorage.setItem("name", name);
+      console.log('Submitted name:', name);
+      window.location.href = 'Mid.html';
+    });
+  </script>
+</body>
+</html>
